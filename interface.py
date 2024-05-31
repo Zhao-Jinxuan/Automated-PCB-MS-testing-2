@@ -19,58 +19,12 @@ def read_data(address,reg):
 try:
     # Write to Config ADC Register
     write_data(adc_address, 0x01, 0b1100001011100011)
-
-# Function of GPIO expander
-    # Write to config expander Register
-    write_data(expander_address, 0x06, 0b11111000)
-    write_data(expander_address, 0x07, 0b01111111)
-
-    # Write to Output Port Register
-     # enable path S0
-    write_data(expander_address, 0x02, 0b11111000)
-    write_data(expander_address, 0x03, 0b01111111)
-
-    # Read Conversion Register
+    # Read ADC Conversion Register
     conversion_r = read_data(adc_address, 0x00)
     # Wait for conversion time
     time.sleep(5)
     # Print conversion result
-    print("test 1:",conversion_r)
-
-    # enable path S1
-    write_data(expander_address, 0x02, 0b11111001)
-    write_data(expander_address, 0x03, 0b01111111)
-    # Read Conversion Register
-    conversion_r = read_data(adc_address, 0x00)
-    # Wait for conversion time
-    time.sleep(5)
-    # Print conversion result
-    print("test 2:")
-
-    # enable path S2
-    write_data(expander_address, 0x02, 0b11111010)
-    write_data(expander_address, 0x03, 0b01111111)
-    print("test 3:")
-    # enable path S3
-    write_data(expander_address, 0x02, 0b11111011)
-    write_data(expander_address, 0x03, 0b01111111)
-    print("test 4:")
-
-    # enable path S4
-    write_data(expander_address, 0x02, 0b11111100)
-    write_data(expander_address, 0x03, 0b01111111)
-    print("test 5:")
-
-    # enable path S5
-    write_data(expander_address, 0x02, 0b11111101)
-    write_data(expander_address, 0x03, 0b01111111)
-    print("test 6:")
-
-    # disable paths
-    write_data(expander_address, 0x02, 0b11111111)
-    write_data(expander_address, 0x03, 0b11111111)
-    time.sleep(0.5)
-    print("test pathes are now close")
+    print(conversion_r)
 
 except Exception as e:
     print("Error:", str(e))
