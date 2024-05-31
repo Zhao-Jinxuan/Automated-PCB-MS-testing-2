@@ -45,7 +45,7 @@ try:
     # Wait for conversion time
     time.sleep(5)
     # Print conversion result
-    print("test 2:",conversion_r)
+    print("test 2:")
 
     # enable path S2
     write_data(expander_address, 0x02, 0b11111010)
