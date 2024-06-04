@@ -24,20 +24,21 @@ def read_16bit_register(address, register):
 
 try:
     # Write 16-bit configuration data to the ADC register
-    write_16bit_register(adc_address, 0x01, 0xc2e3)
-    
-    # check write and read to ADC register #
-    v1=read_16bit_register(adc_address, 0x01)
-    print("v1:",v1)
+    write_16bit_register(adc_address, 0x01, 0b1100001011100011)
+    v1= read_16bit_register(adc_address, 0x01)
+    print("v1: 0b{:016b}".format(v1))
 
     # Wait for the ADC to process the configuration
     time.sleep(0.1)
+
     # Set the address pointer to the conversion register
     bus.write_byte(adc_address, 0x00)
 
     # Read the conversion result from the ADC
     conversion_result = read_16bit_register(adc_address, 0x00)
-    print("Conversion Result:", conversion_result)
+    time.sleep(0.1)
+    # Print the conversion result
+    print("Conversion Result:", conversion_result >> 4)
 
 except Exception as e:
     print("Error:", str(e))
