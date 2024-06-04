@@ -28,9 +28,6 @@ try:
     v1= read_16bit_register(adc_address, 0x01)
     print("v1: 0b{:016b}".format(v1))
 
-    # Wait for the ADC to process the configuration
-    time.sleep(0.1)
-
     # Set the address pointer to the conversion register
     bus.write_byte(adc_address, 0x00)
 
