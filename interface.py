@@ -31,7 +31,7 @@ def read_16bit_register(address, register):
 try:
 # Function of ADC
     # Write 16-bit configuration data to the ADC register
-    write_16bit_register(adc_address, 0x01, 0b1100001011100011)
+    write_16bit_register(adc_address, 0x01, 0b1100000011100011)
     # Set the address pointer to the conversion register
     bus.write_byte(adc_address, 0x00)
 
@@ -45,55 +45,61 @@ try:
     write_data(expander_address, 0x02, 0b11111000)
     write_data(expander_address, 0x03, 0b01111111)
     # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
+    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
+    output_value= conversion_result * 0.003
     # Print the conversion result
-    print("UTD_3V3:", conversion_result >> 4)
+    print("UTD_3V3:", output_value)
     
     # enable path S1
     write_data(expander_address, 0x02, 0b11111001)
     write_data(expander_address, 0x03, 0b01111111)
-    # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
+   # Read the conversion result from the ADC
+    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
+    output_value= conversion_result * 0.003
     # Print the conversion result
-    print("voltage test1:", conversion_result >> 4)
+    print("voltage test1:", output_value)
     
     # enable path S2
     write_data(expander_address, 0x02, 0b11111010)
     write_data(expander_address, 0x03, 0b01111111)
     # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
+    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
+    output_value= conversion_result * 0.003
     # Print the conversion result
-    print("UTD_5V:", conversion_result >> 4)
+    print("UTD_5V:", output_value)
     
     # enable path S3
     write_data(expander_address, 0x02, 0b11111011)
     write_data(expander_address, 0x03, 0b01111111)
     # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
+    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
+    output_value= conversion_result * 0.003
     # Print the conversion result
-    print("voltage test2:", conversion_result >> 4)
+    print("voltage test2:", output_value)
 
     # enable path S4
     write_data(expander_address, 0x02, 0b11111100)
     write_data(expander_address, 0x03, 0b01111111)
-    # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
+   # Read the conversion result from the ADC
+    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
+    output_value= conversion_result * 0.003
     # Print the conversion result
-    print("UTD_SCL_EXT:", conversion_result >> 4)
+    print("UTD_SCL_EXT:", output_value)
 
     # enable path S5
     write_data(expander_address, 0x02, 0b11111101)
     write_data(expander_address, 0x03, 0b01111111)
-    # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
+   # Read the conversion result from the ADC
+    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
+    output_value= conversion_result * 0.003
     # Print the conversion result
-    print("UTD_SDA_EXT:", conversion_result >> 4)
+    print("UTD_SDA_EXT:", output_value)
 
     # disable paths
     write_data(expander_address, 0x02, 0b11111111)
