@@ -29,32 +29,32 @@ try:
     # enable path S0
     write_data(expander_address, 0x02, 0b11111000)
     write_data(expander_address, 0x03, 0b01111111)
-    print("test 1:")
-    
-    # enable path S1
-    write_data(expander_address, 0x02, 0b11111001)
-    write_data(expander_address, 0x03, 0b01111111)
-    print("test 2:")
+    print("continuity test 1:")
     
     # enable path S2
     write_data(expander_address, 0x02, 0b11111010)
     write_data(expander_address, 0x03, 0b01111111)
-    print("test 3:")
-    
-    # enable path S3
-    write_data(expander_address, 0x02, 0b11111011)
-    write_data(expander_address, 0x03, 0b01111111)
-    print("test 4:")
+    print("continuity test 2:")
 
     # enable path S4
     write_data(expander_address, 0x02, 0b11111100)
     write_data(expander_address, 0x03, 0b01111111)
-    print("test 5:")
+    print("continuity test 3:")
 
     # enable path S5
     write_data(expander_address, 0x02, 0b11111101)
     write_data(expander_address, 0x03, 0b01111111)
-    print("test 6:")
+    print("continuity test 4:")
+
+     # enable path S1
+    write_data(expander_address, 0x02, 0b11111001)
+    write_data(expander_address, 0x03, 0b01111111)
+    print("3v3 voltage test 1:")
+    
+    # enable path S3
+    write_data(expander_address, 0x02, 0b11111011)
+    write_data(expander_address, 0x03, 0b01111111)
+    print("5V voltage test 2:")
 
     # disable paths
     write_data(expander_address, 0x02, 0b11111111)
