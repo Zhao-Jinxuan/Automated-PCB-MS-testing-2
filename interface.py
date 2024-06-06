@@ -51,16 +51,6 @@ try:
     # Print the conversion result
     print("UTD_3V3:", output_value)
     
-    # enable path S1
-    write_data(expander_address, 0x02, 0b11111001)
-    write_data(expander_address, 0x03, 0b01111111)
-   # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
-    time.sleep(0.1)
-    output_value= conversion_result * 0.003
-    # Print the conversion result
-    print("voltage test1:", output_value)
-    
     # enable path S2
     write_data(expander_address, 0x02, 0b11111010)
     write_data(expander_address, 0x03, 0b01111111)
@@ -70,16 +60,6 @@ try:
     output_value= conversion_result * 0.003
     # Print the conversion result
     print("UTD_5V:", output_value)
-    
-    # enable path S3
-    write_data(expander_address, 0x02, 0b11111011)
-    write_data(expander_address, 0x03, 0b01111111)
-    # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
-    time.sleep(0.1)
-    output_value= conversion_result * 0.003
-    # Print the conversion result
-    print("voltage test2:", output_value)
 
     # enable path S4
     write_data(expander_address, 0x02, 0b11111100)
