@@ -49,7 +49,7 @@ try:
     conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
     output_value= conversion_result * 0.003
-    # Print the conversion result
+    # Print the voltage value
     print("UTD_3V3 voltage :", output_value)
     
     # enable path S3
@@ -59,7 +59,7 @@ try:
     conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     time.sleep(0.1)
     output_value= conversion_result * 0.003
-    # Print the conversion result
+    # Print the voltage value
     print("UTD_5V voltage :", output_value)
 
     # disable paths
