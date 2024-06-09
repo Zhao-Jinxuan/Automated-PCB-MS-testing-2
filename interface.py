@@ -29,11 +29,13 @@ try:
     bus.write_byte(adc_address, 0x00)
 
     # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
+    conversion_result = read_16bit_register(adc_address, 0x00) >> 4
     # wait for communication time
     time.sleep(0.1)
-    # Print the conversion result
-    print("Conversion Result:", conversion_result >> 4)
+    # convert conversion result into voltage value
+    output_value= conversion_result * 0.003
+    # Print the voltage value
+    print("UTD_SDA_EXT:", output_value)
 
 except Exception as e:
     print("Error:", str(e))
