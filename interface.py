@@ -29,6 +29,7 @@ def read_16bit_register(address, register):
     return (data[0] << 8) | data[1]
 
 try:
+    print("This is continuity test")
 # Function of ADC
     # Write 16-bit configuration data to the ADC register
     write_16bit_register(adc_address, 0x01, 0b1100000011100011)
@@ -57,6 +58,7 @@ try:
     write_data(expander_address, 0x03, 0b01111111)
     # Read the conversion result from the ADC
     conversion_result = read_16bit_register(adc_address, 0x00) >> 4
+     # wait for communication time
     time.sleep(0.1)
     output_value= conversion_result * 0.003
     # Print the conversion result
@@ -67,6 +69,7 @@ try:
     write_data(expander_address, 0x03, 0b01111111)
    # Read the conversion result from the ADC
     conversion_result = read_16bit_register(adc_address, 0x00) >> 4
+     # wait for communication time
     time.sleep(0.1)
     output_value= conversion_result * 0.003
     # Print the conversion result
@@ -75,8 +78,9 @@ try:
     # enable path S5
     write_data(expander_address, 0x02, 0b11111101)
     write_data(expander_address, 0x03, 0b01111111)
-   # Read the conversion result from the ADC
+    # Read the conversion result from the ADC
     conversion_result = read_16bit_register(adc_address, 0x00) >> 4
+    # wait for communication time
     time.sleep(0.1)
     output_value= conversion_result * 0.003
     # Print the conversion result
@@ -85,7 +89,6 @@ try:
     # disable paths
     write_data(expander_address, 0x02, 0b11111111)
     write_data(expander_address, 0x03, 0b11111111)
-    time.sleep(0.1)
     print("test pathes are now close")
 
 except Exception as e:
