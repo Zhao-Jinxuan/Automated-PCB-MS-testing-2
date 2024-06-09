@@ -18,10 +18,6 @@ try:
 # Function of GPIO expander
     # Write to config expander Register
     write_data(expander_address, 0x06, 0b11111000)
-    # check write and read to register successfully
-    v1= read_data(expander_address, 0x06)
-    print(v1)
-    #
     write_data(expander_address, 0x07, 0b01111111)
 
     # Write to Output Port Register
@@ -48,12 +44,12 @@ try:
      # enable path S1
     write_data(expander_address, 0x02, 0b11111001)
     write_data(expander_address, 0x03, 0b01111111)
-    print("3v3 voltage test 1:")
+    print("voltage test 1:")
     
     # enable path S3
     write_data(expander_address, 0x02, 0b11111011)
     write_data(expander_address, 0x03, 0b01111111)
-    print("5V voltage test 2:")
+    print("voltage test 2:")
 
     # disable paths
     write_data(expander_address, 0x02, 0b11111111)
