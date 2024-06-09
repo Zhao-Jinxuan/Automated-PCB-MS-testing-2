@@ -50,7 +50,7 @@ try:
     # wait for communication time
     time.sleep(0.1)
     output_value= conversion_result * 0.003
-    # Print the conversion result
+    # Print the voltage value
     print("UTD_3V3:", output_value)
     
     # enable path S2
@@ -61,7 +61,7 @@ try:
      # wait for communication time
     time.sleep(0.1)
     output_value= conversion_result * 0.003
-    # Print the conversion result
+    # Print the voltage value
     print("UTD_5V:", output_value)
 
     # enable path S4
@@ -72,7 +72,7 @@ try:
      # wait for communication time
     time.sleep(0.1)
     output_value= conversion_result * 0.003
-    # Print the conversion result
+    # Print the voltage value
     print("UTD_SCL_EXT:", output_value)
 
     # enable path S5
@@ -83,7 +83,7 @@ try:
     # wait for communication time
     time.sleep(0.1)
     output_value= conversion_result * 0.003
-    # Print the conversion result
+    # Print the voltage value
     print("UTD_SDA_EXT:", output_value)
 
     # disable paths
