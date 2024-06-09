@@ -1,17 +1,16 @@
-#test#copy
+#GPIO expander
 import smbus
 import time
 
 # Initialize SMBus object
 bus = smbus.SMBus(1)  # Use 1 for Raspberry Pi's I2C bus 1
-# ADC and expander addresses
-adc_address = 0x48
+# expander addresses
 expander_address = 0x20
 
-# Function to write data to an I2C device
+# Function to write data to expander device
 def write_data(address,reg, data):
     bus.write_byte_data(address,reg, data)
-# Function to read data from an I2C device
+# Function to read data from expander device
 def read_data(address,reg):
     return bus.read_byte_data(address,reg)
 
