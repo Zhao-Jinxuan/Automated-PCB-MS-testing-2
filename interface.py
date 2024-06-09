@@ -4,9 +4,8 @@ import time
 
 # Initialize SMBus object
 bus = smbus.SMBus(1)  # Use 1 for Raspberry Pi's I2C bus 1
-# ADC and expander addresses
+# ADC address
 adc_address = 0x48
-expander_address = 0x20
 
 # Function to write 16-bit data to the ADC register
 def write_16bit_register(address, register, data):
