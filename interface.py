@@ -1,4 +1,4 @@
-#test#copy
+#voltage level test
 import smbus
 import time
 
@@ -29,6 +29,7 @@ def read_16bit_register(address, register):
     return (data[0] << 8) | data[1]
 
 try:
+    print("This is voltage level test")
 # Function of ADC
     # Write 16-bit configuration data to the ADC register
     write_16bit_register(adc_address, 0x01, 0b1100000011100011)
@@ -49,7 +50,7 @@ try:
     time.sleep(0.1)
     output_value= conversion_result * 0.003
     # Print the conversion result
-    print("UTD_3V3 voltage level test:", output_value)
+    print("UTD_3V3 voltage :", output_value)
     
     # enable path S3
     write_data(expander_address, 0x02, 0b11111011)
@@ -59,19 +60,12 @@ try:
     time.sleep(0.1)
     output_value= conversion_result * 0.003
     # Print the conversion result
-    print("UTD_5V voltage level test:", output_value)
+    print("UTD_5V voltage :", output_value)
 
     # disable paths
     write_data(expander_address, 0x02, 0b11111111)
     write_data(expander_address, 0x03, 0b11111111)
-    time.sleep(0.1)
-    print("test pathes are now close")
-
-    # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
-    time.sleep(0.1)
-    # Print the conversion result
-    print("Exit:", conversion_result >> 4)
+    print("voltage level test pathes are now close")
 
 except Exception as e:
     print("Error:", str(e))
