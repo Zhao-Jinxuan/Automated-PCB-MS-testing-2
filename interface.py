@@ -32,6 +32,10 @@ try:
 # Function of ADC
     # Write 16-bit configuration data to the ADC register
     write_16bit_register(adc_address, 0x01, 0b1100000011100011)
+    #check write and read to register successfully
+    v1= read_16bit_register(adc_address, 0x01)
+    print("v1: 0b{:016b}".format(v1))
+    #
     # Set the address pointer to the conversion register
     bus.write_byte(adc_address, 0x00)
 
