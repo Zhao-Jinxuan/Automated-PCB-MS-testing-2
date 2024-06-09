@@ -30,6 +30,7 @@ try:
 
     # Read the conversion result from the ADC
     conversion_result = read_16bit_register(adc_address, 0x00)
+    # wait for communication time
     time.sleep(0.1)
     # Print the conversion result
     print("Conversion Result:", conversion_result >> 4)
