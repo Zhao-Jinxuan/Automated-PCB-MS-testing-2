@@ -1,4 +1,4 @@
-#test#copy
+#Continuity test
 import smbus
 import time
 
@@ -87,12 +87,6 @@ try:
     write_data(expander_address, 0x03, 0b11111111)
     time.sleep(0.1)
     print("test pathes are now close")
-
-    # Read the conversion result from the ADC
-    conversion_result = read_16bit_register(adc_address, 0x00)
-    time.sleep(0.1)
-    # Print the conversion result
-    print("Exit:", conversion_result >> 4)
 
 except Exception as e:
     print("Error:", str(e))
