@@ -54,7 +54,6 @@ try:
     # disable paths
     write_data(expander_address, 0x02, 0b11111111)
     write_data(expander_address, 0x03, 0b11111111)
-    time.sleep(0.5)
     print("test pathes are now close")
 
 except Exception as e:
