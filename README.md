@@ -1,2 +1,3 @@
 # Automated-PCB-MS-testing-2
-history of changes of code can be seen in Github link for repository of Automated-PCB-MS-testing-2 project.
+https://github.com/Zhao-Jinxuan/Automated-PCB-MS-testing-2.git
+History of changes of code can be viewed via a link to the Automated-PCB-MS-testing-2 project repository on Github.
