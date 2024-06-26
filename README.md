@@ -12,9 +12,9 @@ or when continuity test and voltage level test can be executed at the same time 
 example of Expected output:
 
 Step 1:
-![image](https://github.com/Zhao-Jinxuan/Automated-PCB-MS-testing-2/assets/159006763/a98d3cc7-1de6-4dac-b336-8507e9b09ba5)
+/![image](https://github.com/Zhao-Jinxuan/Automated-PCB-MS-testing-2/assets/159006763/a98d3cc7-1de6-4dac-b336-8507e9b09ba5)
 or
-![image](https://github.com/Zhao-Jinxuan/Automated-PCB-MS-testing-2/assets/159006763/317d8326-344f-4dfa-b03d-86b247cc36f8)
+/![image](https://github.com/Zhao-Jinxuan/Automated-PCB-MS-testing-2/assets/159006763/317d8326-344f-4dfa-b03d-86b247cc36f8)
 
 Step 3:
 ![image](https://github.com/Zhao-Jinxuan/Automated-PCB-MS-testing-2/assets/159006763/f4f60c23-f1f6-4b6c-856b-72084c788b3a)
